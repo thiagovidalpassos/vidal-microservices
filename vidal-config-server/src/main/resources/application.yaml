@@ -3,6 +3,13 @@ server:
 spring:
   application:
     name: vidal-config-server
-  profiles:
-    acive:
-    - native:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/thiagovidalpassos/vidal-microservices/tree/main/vidal-config-server
+          username: thiagovidalpassos
+          password: Tibia.159
+          default-label: main
+          search-paths:
+          - 'GreetingService*'
