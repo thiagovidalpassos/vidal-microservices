@@ -4,7 +4,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConfigurationProperties("greeting-service") //apontamento para o arquivo yaml
+@ConfigurationProperties("vidal-greeting-service") //apontamento para o arquivo yaml
 public class GreetingConfiguration {
 	
 	private String greeting;
