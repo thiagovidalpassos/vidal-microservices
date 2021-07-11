@@ -1,4 +1,4 @@
-package br.com.vidal;
+package br.com.vidal.model;
 
 public class Greeting {
 	
