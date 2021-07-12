@@ -4,15 +4,35 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Transient;
+
+@Entity(name="cambio") //referencia a tabela do bancos
 public class Cambio implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY) //ID como auto incremental
 	private long id;
+	
+	@Column(name = "from_currency", nullable = false, length = 3)
     private String from;
+	
+	@Column(name = "to_currency", nullable = false, length = 3)
     private String to;
+	
+	@Column(nullable = false)
     private BigDecimal conversionFactor;
+	
+	@Transient //nao corresponde a objeto da base de dados
     private BigDecimal convertedValue;
+    
+	@Transient //nao corresponde a objeto da base de dados
     private String environment;
     
     public Cambio() {}
